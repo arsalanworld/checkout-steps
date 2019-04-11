@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="customer-account-step" xsi:type="array">
+                                            <item name="component" xsi:type="string">uiComponent</item>
+                                            <item name="sortOrder" xsi:type="string">1</item>
+                                            <item name="children" xsi:type="array">
+                                                <item name="customerAccount" xsi:type="array">
+                                                    <item name="component" xsi:type="string">Arsal_CheckoutSteps/js/view/customer-step</item>
+                                                    <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                    <item name="sortOrder" xsi:type="string">1</item>
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="customer-fields" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="before-login-form" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">uiComponent</item>
+                                                                    <item name="displayArea" xsi:type="string">before-login-form</item>
+                                                                    <item name="children" xsi:type="array" />
+                                                                </item>
+                                                                <item name="additional-login-form-fields" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">uiComponent</item>
+                                                                    <item name="displayArea" xsi:type="string">additional-login-form-fields</item>
+                                                                    <item name="children" xsi:type="array">
+                                                                        <!-- Add your custom components here -->
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                            <item name="component" xsi:type="string">Arsal_CheckoutSteps/js/view/account</item>
+                                                            <item name="displayArea" xsi:type="string">customer-fields</item>
+                                                            <item name="tooltip" xsi:type="array">
+                                                                <item name="description" xsi:type="string">Enter your email associated with store.</item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="sortOrder" xsi:type="string">2</item>
+                                        </item>
+                                        <item name="billing-step" xsi:type="array">
+                                            <item name="sortOrder" xsi:type="string">3</item>
+                                        </item>
+                                        <item name="success" xsi:type="array">
+                                            <item name="component" xsi:type="string">uiComponent</item>
+                                            <item name="sortOrder" xsi:type="string">4</item>
+                                            <item name="children" xsi:type="array">
+                                                <item name="orderSuccess" xsi:type="array">
+                                                    <item name="component" xsi:type="string">Arsal_CheckoutSteps/js/view/success-step</item>
+                                                    <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                    <item name="sortOrder" xsi:type="string">1</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="template" xsi:type="string">Arsal_CheckoutSteps/successStep</item>
+                                                        <item name="title" xsi:type="string">Thank you for your purchase!</item>
+                                                    </item>
+                                                    <item name="children" xsi:type="array" />
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

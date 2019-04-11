@@ -1,0 +1,25 @@
+<li id="customer-step" data-bind="fadeVisible: isVisible">
+    <div class="step-title" data-bind="i18n: title" data-role="title"></div>
+    <div id="success-step-title"
+         class="step-content"
+         data-role="content">
+
+        <form data-bind="submit: navigateToNextStep" novalidate="novalidate" class="form">
+            <fieldset class="fieldset">
+                <div class="checkout-success">
+                    <p data-bind="text: getOrderText()"></p>
+                    <div class="view-orders">
+                        <a class="action view-orders" data-bind="attr: { href: getOrderViewUrl() }, text: 'View Your Orders'"></a>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button data-role="opc-continue" type="submit" class="button action continue primary">
+                        <span><!-- ko i18n: 'Continue Shopping'--><!-- /ko --></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</li>

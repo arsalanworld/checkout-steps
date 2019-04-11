@@ -1,0 +1,15 @@
+<li id="customer-step" data-bind="fadeVisible: isVisible">
+    <div class="step-title" data-bind="i18n: customerTitle" data-role="title"></div>
+    <div id="customer-step-title"
+         class="step-content"
+         data-role="content">
+
+        <form data-bind="submit: navigateToNextStep" novalidate="novalidate" class="form form-shipping-address">
+            <fieldset class="fieldset">
+                <!-- ko foreach: getRegion('customer-fields') -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+            </fieldset>
+        </form>
+    </div>
+</li>
