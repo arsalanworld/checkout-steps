@@ -8,9 +8,57 @@
             <fieldset class="fieldset">
                 <div class="checkout-success">
                     <p data-bind="text: getOrderText()"></p>
+                    <div data-bind="fadeVisible: displayOrderInfo, attr: { class: 'order-information' }">
+                        <p>Your Order Id is: #<strong data-bind="text: orderId"></strong></p>
+                        <div class="address-section">
+                            <div class="shipping-address" data-bind="fadeVisible: shippingAddress">
+                                <h3 data-bind="text: 'Shipping Address'"></h3>
+                                <p data-bind="text: shippingAddress"></p>
+                            </div>
+                        </div>
+                        <div class="product-information">
+                            <h3 data-bind="text: 'Product Information'"></h3>
+                            <ul data-bind="foreach: getQuoteItems()">
+                                <li>
+                                    <ul>
+                                        <li>
+                                            <img data-bind="attr: {src: thumbnail, alt: name, title: name}" />
+                                        </li>
+                                        <li>
+                                            <div data-bind="text: name"></div>
+                                            <div class="sku">
+                                                SKU: <span data-bind="text: sku"></span>
+                                            </div>
+                                            <div class="qty">
+                                                Qty: <span data-bind="text: qty"></span>
+                                            </div>
+                                            <div class="Price">
+                                                Price: <span data-bind="text: $parent.getFormattedPrice(price)"></span>
+                                            </div>
+                                            <div class="tax-amount">
+                                                Tax: <span data-bind="text: $parent.getFormattedPrice(tax_amount)"></span>
+                                            </div>
+                                            <div class="row-total">
+                                                Row Total: <span data-bind="text: $parent.getFormattedPrice(row_total_incl_tax)"></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="order-summary">
+                            <ul data-bind="foreach: getTotalsData()">
+                               <li>
+                                   <span data-bind="text: title"></span>
+                                   <span data-bind="text: $parent.getFormattedPrice(value)"></span>
+                               </li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="view-orders">
                         <a class="action view-orders" data-bind="attr: { href: getOrderViewUrl() }, text: 'View Your Orders'"></a>
                     </div>
+
                 </div>
             </fieldset>
             <div class="actions-toolbar">
